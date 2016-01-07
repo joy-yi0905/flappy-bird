@@ -71,7 +71,7 @@
 		moveTimer : null
 	}
 
-	var  gameBird = {
+	var gameBird = {
 		iTargetTop : 0,
 		iTargetBottom : function(){
 			return gamePillar.create().pillarAllH - 190 - 24;
@@ -119,7 +119,7 @@
 			move(bird,gameBird.iTargetBottom(),50);
 			gameBird.bFly = true;
 			(!gamePillar.MoveTimer) && (gamePillar.MoveTimer = setInterval(detectPosition,10));
-			if(bAddEvent)return; // 避免重复绑定
+			if(bAddEvent) return; // 避免重复绑定
 			d.addEventListener(("ontouchstart" in window)? "touchstart" : "mousedown",function(){
 				bAddEvent = true;
 				gameBird.fly();
@@ -276,6 +276,7 @@
 	}
 
 	gamePillar.create();
+
 	gamePillar.restart();
 	
 	startBtn.addEventListener("click",gameScene.start,false);
@@ -285,8 +286,3 @@
 	quitBtn.addEventListener("click",gameScene.quit,false);
 
 })()
-
-
-	
-
-	
